@@ -9,6 +9,16 @@ body {
   box-sizing: border-box;
 }
 
+.containerr {
+  /* width: 90%; */
+  margin: auto;
+}
+
+.container2 {
+  width: 90%;
+  margin: auto;
+}
+
 /* ==================================================================== NAVBAR TOP */
 
 .justify-content-center {
@@ -349,7 +359,7 @@ div .sub-title {
 
 .nominal-money {
   color: blue;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .title-money {
@@ -373,27 +383,270 @@ div .sub-title {
   text-align: center;
 }
 
-
-
 /* ================================================================================== Editor Spots */
 
 .chip {
-    display: inline-block;
-    padding: 0 25px;
-    height: 30px;
-    font-size: 12px;
-    line-height: 30px;
-    border-radius: 25px;
-    background-color: #f1f1f1;
+  display: inline-block;
+  padding: 0 25px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 30px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
 
+.chip:hover {
+  color: #000;
+}
+
+.changeBackground {
+  background-color: #ff1493;
+  color: white;
+}
+
+.border2 {
+  background: whitesmoke;
+  color: #ff1493;
+  border-bottom: double;
+  border-right: double;
+  padding: 7px;
+  /* width: auto; */
+  height: 40px;
+  text-align: center;
+}
+
+.headline-editor {
+  width: 350px;
+  height: 200px;
+}
+
+.subtitle-headline {
+  color: #ff1493;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.time-headline {
+  color: grey;
+}
+
+.headline-title {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 14px;
+  color: black;
+}
+
+.container-headline {
+  max-width: 300px;
+  position: relative;
+}
+
+/* Grid Image */
+.grid-container {
+  max-width: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
+  /* border: 1px solid black; */
+  /* background-color: whitesmoke; */
+  /* padding: 10px; */
+}
+
+.grid-container > div {
+  max-width: 150px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  /* padding: 10px 0; */
+  font-size: 30px;
+}
+
+.headline-editor-image-grid {
+  width: 150px;
+  height: 100px;
+}
+
+.fa-arrow-down {
+  margin-top: 3px;
+}
+
+.border3 {
+  background: whitesmoke;
+  color: #ff1493;
+  border-bottom: double;
+  border-right: double;
+  padding: 7px;
+  /* width: auto; */
+  /* height: 40px; */
+  /* text-align: center; */
+}
+
+/* ============================================================================== Get Award  */
+
+.title-award {
+  color: blue;
+  font-size: 1.5em;
+}
+
+.paragraph-award {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  font-size: 12px;
+  width: 400px;
+}
+
+.container-get-award {
+  width: 90%;
+  /* margin: auto; */
+}
+
+.background-banner {
+  background-color: grey;
+}
+
+/* ============================================================================== Instagram Layout */
+
+.container-layout {
+  width: 50rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Gallery Section */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: -1rem -1rem; */
+  padding-bottom: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  flex: 0.2 0 0.2rem;
+  margin: 1rem;
+  /* color: #fff; */
+  cursor: pointer;
+}
+
+.gallery-item:hover .gallery-item-info,
+.gallery-item:focus .gallery-item-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-info {
+  display: none;
+}
+
+.gallery-item-info li {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.gallery-item-likes {
+  margin-right: 1rem;
+}
+
+.gallery-item-type {
+  position: absolute;
+  top: 1rem;
+  right: 2em;
+  font-size: 1.5rem;
+  text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.fa-clone,
+.fa-comment {
+  transform: rotateY(180deg);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Loader */
+
+.loader {
+  width: 3rem;
+  height: 3rem;
+  border: 0.6rem solid #999;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: loader 500ms linear infinite;
+}
+
+/* Media Query */
+
+/* Spinner Animation */
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .chip:hover {
-    color: #000;
+}
+
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 1rem;
   }
 
-  .changeBackground {
-    background-color: #ff1493;
-    color: white;
+  .gallery-item,
+  .gallery {
+    width: auto;
+    margin: 0;
   }
+}
+@media (max-width: 40rem) {
+  .container-layout {
+    width: 50%;
+  }
+}
 
+
+/* =============================================================================== Image Instagram */
+
+.container-image-instagram {
+    width: 50%;
+    margin: auto;
+}
+
+.profile-instagram {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid blue;
+    border-radius: 50%;
+}
+
+.profile-instagram-text {
+    
+    margin-top: 30px;
+    float: left;
+}
+
+
+/* =============================================================================== Footer */
+
+.footer-item {
+  font-size: 12px;
+}
