@@ -33,6 +33,9 @@
 
     <!-- Ads -->
     <meta name="displayheight" content="31, 60, 90, 125, 250, 400, 600" />
+
+    <!-- Social Media Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -45,7 +48,7 @@
                         d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8V5a4 4 0 0 0-8 0v6a4 4 0 0 0 8 0zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z" />
                 </svg>
             </a>
-            <div>
+            <div style="width: 100%;">
                 <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +57,7 @@
                         <path fill-rule="evenodd"
                             d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
                     </svg>
-                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                    <input class="form-control form-control-sm ml-3 w-100" type="text" placeholder="Search"
                         aria-label="Search" />
                 </form>
             </div>
@@ -1126,19 +1129,19 @@
         </div>
 
 
+
+
+
+        <!-- Grid Photo Instagram Layout -->
         <div class="container-image-instagram">
             <div class="row">
-                <div class="col-xs m-2">
-                    <img src="assets/5.jpg" class="profile-instagram">
-                </div>
-                <div class="col-xs m-2">
-                    <div class="profile-instagram-text">spottedmediasg</div>
+                <div class="col m-4">
+                    <div class="profile-instagram-text"><img src="assets/5.jpg" class="profile-instagram">
+                        spottedmediasg</div>
                 </div>
             </div>
         </div>
 
-
-        <!-- Grid Photo Instagram Layout -->
         <div class="container-layout">
             <div class="gallery">
                 <div class="gallery-item" tabindex="0">
@@ -1274,51 +1277,109 @@
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <div class="gallery-item" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=500&h=500&fit=crop"
-                        class="gallery-image" alt="">
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 34</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 1</li>
-                        </ul>
-                    </div>
+            <div id="loader_div"
+                class="row container-layout border4 justify-content-center w-100 ld-ext-right buttonLoader" onclick="">
+                SHOW MORE
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Get In Touch -->
+    <div class="container-get-award background-banner2 p-5 mt-3 w-100">
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <div class="row title-banner2">GET IN TOUCH</div>
+                <div class="row subtitle-banner">We'd love to hear from you!</div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <input type="text" class="form-control input-form m-1" id="inputName" aria-describedby="name"
+                        placeholder="Your Name">
                 </div>
-
-                <div class="gallery-item" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1505058707965-09a4469a87e4?w=500&h=500&fit=crop"
-                        class="gallery-image" alt="">
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 41</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 0</li>
-                        </ul>
-                    </div>
+                <div class="row">
+                    <input type="email" class="form-control input-form m-1" id="inputEmail" aria-describedby="email"
+                        placeholder="Your email address">
                 </div>
-
-                <div class="gallery-item" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1423012373122-fff0a5d28cc9?w=500&h=500&fit=crop"
-                        class="gallery-image" alt="">
-                    <div class="gallery-item-type">
-                        <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
-                    </div>
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 30</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 2</li>
-                        </ul>
-                    </div>
+                <div class="row dropdown">
+                    <a class="dropdown-toggle text-light form-control input-form m-1 dropdown-message" href="#"
+                        data-toggle="dropdown"> Your Message Objective
+                    </a>
+                    <!-- <input type="email" class="form-control input-form m-1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email"> -->
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-dark" href="#">
+                                Second level 2 &raquo
+                            </a>
+                            <ul class="submenu dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item text-dark" href="">
+                                        Third level 1</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" href="">
+                                        Third level 2</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" href="">
+                                        Third level 3 &raquo
+                                    </a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item text-dark" href="">
+                                                Fourth level 1</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-dark" href="">
+                                                Fourth level 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" href="">
+                                        Second level 4</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" href="">
+                                        Second level 5</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-dark" href="#">
+                                Dropdown item 3
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-dark" href="#">
+                                Dropdown item 4
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="loader"></div>
+            <div class="col-4">
+                <div class="row ">
+                    <input type="text" class="form-control input-form m-1 custom-text w-100 justify-content-center"
+                        id="inputName" aria-describedby="name" placeholder="Your Name">
+                </div>
+                <div class=" border5 w-100 mr-auto">
+                    <div>SIGN UP TODAY<i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+
         </div>
+    </div>
 
 
 
@@ -1326,47 +1387,64 @@
 
 
 
-        <!-- Footer -->
-        <footer class="container py-5">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="d-block mb-2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
-                        <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
-                        <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
-                        <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
-                        <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
-                        <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
-                    </svg>
-                    <small class="d-block mb-3 text-muted bold">&copy; ABOUT SPOTTED MEDIA</small>
-                    <small class="d-block mb-3 text-dark text-justify">As the #1 digital platform for happenings in
-                        Singapore, Spotted!
-                        Media brings you the lates trends and spots, right to your
-                        fingertips!</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h6>OTHER SECTIONS</h>
-                        <ul class="list-unstyled text-small">
-                            <li><a class="text-muted footer-item" href="#">ABOUT</a></li>
-                            <li><a class="text-muted footer-item" href="#">ADVERTISE</a></li>
-                            <li><a class="text-muted footer-item" href="#">PARTNERS</a></li>
-                            <li><a class="text-muted footer-item" href="#">FAQ</a></li>
-                            <li><a class="text-muted footer-item" href="#">CAREERS</a></li>
-                            <li><a class="text-muted footer-item" href="#">CONTACT</a></li>
-                        </ul>
-                </div>
-                <div class="col-6 col-md">
+
+    <!-- Footer -->
+    <footer class="py-5 background-footer">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="d-block mb-2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+                    <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+                    <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+                    <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+                    <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+                    <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+                </svg>
+                <small class="d-block mb-3 text-light bold">&copy; ABOUT SPOTTED MEDIA</small>
+                <small class="d-block mb-3 text-light text-justify">As the #1 digital platform for happenings in
+                    Singapore, Spotted!
+                    Media brings you the lates trends and spots, right to your
+                    fingertips!</small>
+            </div>
+            <div class="col-6 col-md">
+                <h6>OTHER SECTIONS</h>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-light footer-item" href="#">ABOUT</a></li>
+                        <li><a class="text-light footer-item" href="#">ADVERTISE</a></li>
+                        <li><a class="text-light footer-item" href="#">PARTNERS</a></li>
+                        <li><a class="text-light footer-item" href="#">FAQ</a></li>
+                        <li><a class="text-light footer-item" href="#">CAREERS</a></li>
+                        <li><a class="text-light footer-item" href="#">CONTACT</a></li>
+                    </ul>
+            </div>
+            <div class="col-6 col-md">
+                <div class="container">
                     <h5>GET IN TOUCH</h5>
                     <ul class="list-unstyled text-small">
                         <small class="d-block mb-3 text-muted bold">Keep up with our stories by signing up for our
                             newsletters</small>
                     </ul>
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1 red-border" type="text" placeholder="ENTER EMAIL ADDRESS"
+                            aria-label="ENTER EMAIL ADDRESS">
+                        <div class="input-group-append">
+                            <span class="input-group-text red background-join" id="basic-text1">JOIN! <i
+                                    class="fas fa-arrow-right text-grey" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fab fa-tiktok"></a>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 
 </html>

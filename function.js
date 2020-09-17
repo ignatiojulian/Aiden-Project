@@ -64,3 +64,10 @@ function changeColorChip1() {
     var element = document.getElementById('chip5');
     element.classList.toggle("changeBackground");
  }
+
+
+
+//  Loader
+function loader() {
+    
+}
