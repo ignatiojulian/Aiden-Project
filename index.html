@@ -21,9 +21,15 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
 
     <!-- External CSS -->
     <link href="styles.css" rel="stylesheet" />
@@ -36,524 +42,192 @@
 
     <!-- Social Media Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Jquery Loadmore -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 
 <body>
-    <nav class="site-header sticky-top py-1">
-        <div class="justify-content-center d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2" href="#">
-                <svg width="24" height="24" viewBox="0 0 16 16" class="bi-mouse" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path fill-rule="evenodd"
-                        d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8V5a4 4 0 0 0-8 0v6a4 4 0 0 0 8 0zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z" />
-                </svg>
-            </a>
-            <div style="width: 100%;">
-                <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                        <path fill-rule="evenodd"
-                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                    </svg>
-                    <input class="form-control form-control-sm ml-3 w-100" type="text" placeholder="Search"
-                        aria-label="Search" />
-                </form>
-            </div>
-            <div>
-                <a class="py-2 d-none d-md-inline-block mr-1 font-navbar" href="#"><i
-                        class="fas fa-money-bill-wave-alt"></i> Cash In!</a>
-                <a class="font-navbar money" href="#">S<i class="fas fa-dollar-sign"></i> 120</a>
-                <a href="#" class="dropdown-toggle font-navbar" data-toggle="dropdown" role="button"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span class="nav-label"><i class="fas fa-user-circle"></i> Logout</span><span
-                        class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
+
+    <!-- NAVBAR 2 ROW -->
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light sticky-top container-fluid" id="navbar">
+        <div class="container">
+            <img src="assets/download.png" height=90 class="" />
+            <!-- links toggle -->
+           
+                <i class="fa fa-bars navbar-toggler order-first" data-toggle="collapse" data-target="#links"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></i>
+           
+            <!-- account toggle -->
+           
+                <i class="fa fa-user navbar-toggler" data-toggle="collapse" data-target="#account"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></i>
+           
+
+
+            <div class="collapse navbar-collapse collapse-right flex-column align-items-start" id="links">
+                <ul class="navbar-nav mr-auto navbar-nav nav my-1 w-100 justify-content-center limit-mobile pt-2">
+                    <div class="search-container">
+                        <div class="searchbar">
+                            <label for="search-input" class="search-icon-wrapper">
+                                <div class="search-icon"></div>
+                            </label>
+                            <input type="text" class="search-input" id="search-input" placeholder="Search">
+
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse hide-when-mobile">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-money-bill-wave-alt"></i>
+                                    Cash
+                                    In!</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">S<i class="fas fa-dollar-sign"></i>
+                                    120</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user-circle"></i> Logout
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Dropdown 1</a>
+                                    <a class="dropdown-item" href="#">Dropdown 2</a>
+                                    <a class="dropdown-item" href="#">Dropdown 3</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <label class="switch">
+                                    <input type="checkbox" onclick="setTheme()" id="switch-theme" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
-                <label class="switch">
-                    <input type="checkbox" onclick="setTheme()" />
-                    <span class="slider round"></span>
-                </label>
+                <ul class="navbar-nav nav my-1">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-compass"></i> Roam
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-dot-circle"></i> Lifestyle
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-pizza-slice"></i> Eat
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-shapes"></i> Fun
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-percentage"></i> Deals
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-umbrella-beach"></i> Discover
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-heart"></i> My Heartland
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-theater-masks"></i> Stories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Dropdown 1</a>
+                            <a class="dropdown-item" href="#">Dropdown 2</a>
+                            <a class="dropdown-item" href="#">Dropdown 3</a>
+                        </div>
+                    </li>
+                    <div class="collapse navbar-collapse show-when-mobile" id="account">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-money-bill-wave-alt"></i>
+                                    Cash
+                                    In!</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">S<i class="fas fa-dollar-sign"></i>
+                                    120</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user-circle"></i> Logout
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Dropdown 1</a>
+                                    <a class="dropdown-item" href="#">Dropdown 2</a>
+                                    <a class="dropdown-item" href="#">Dropdown 3</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <label class="switch">
+                                    <input type="checkbox" onclick="setTheme()" id="switch-theme" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </ul>
             </div>
+
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main_nav">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-compass"></i> Roam</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-dot-circle"></i> Lifestyle
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-pizza-slice"></i> Eat
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-shapes"></i> Fun
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-percentage"></i> Deals
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-umbrella-beach"></i> Discover
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-heart"></i> My Heartland
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"><i
-                            class="fas fa-theater-masks"></i> Stories
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Second level 2 &raquo
-                            </a>
-                            <ul class="submenu dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 2</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Third level 3 &raquo
-                                    </a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 1</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-dark" href="">
-                                                Fourth level 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 4</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-dark" href="">
-                                        Second level 5</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-dark" href="#">
-                                Dropdown item 4
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
 
     <!-- Ads Section -->
     <div class="center">
@@ -567,25 +241,25 @@
     <!-- Stories Section -->
     <div class="container2 mt-5">
         <div class="row">
-            <div class="col-2">
-                <aside class="justify-content-center">
-                    <!-- Colomn 1 -->
-                    <div class="row">
-                        <div class="border rounded-circle side-stories">
-                            <img src="assets/money-bag.svg" alt="Money Bag" class="side-stories-image" />
-                        </div>
+            <div class="col-2 column-topic-stories">
+
+                <!-- Colomn 1 -->
+                <div class="container margin-left-mobile">
+                    <div class="side-stories">
+                        <img src="assets/money-bag.svg" alt="Money Bag" class="side-stories-image" />
                     </div>
-                    <div class="row">
-                        <div class="border rounded-circle side-stories">
-                            <img src="assets/star.svg" alt="Sparkling Star" class="side-stories-image" />
-                        </div>
+
+                    <div class="side-stories">
+                        <img src="assets/star.svg" alt="Sparkling Star" class="side-stories-image" />
                     </div>
-                    <div class="row">
-                        <div class="border rounded-circle side-stories">
-                            <img src="assets/conversation.svg" alt="Money Bag" class="side-stories-image" />
-                        </div>
+
+                    <div class="side-stories">
+                        <img src="assets/conversation.svg" alt="Money Bag" class="side-stories-image" />
                     </div>
-                </aside>
+                </div>
+
+
+
             </div>
 
             <div class="col-10">
@@ -596,8 +270,8 @@
                         <ul class="list" id="list">
                             <li class="item">
                                 <div class="col">
-                                    <div class="row justify-content-center">
-                                        <img src="assets/1.jpg" alt="10x10" class="rounded-circle size"
+                                    <div class="row justify-content-center ">
+                                        <img src="assets/1.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -610,7 +284,7 @@
                             <li class="item">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <img src="assets/2.jpg" alt="10x10" class="rounded-circle size"
+                                        <img src="assets/2.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -623,7 +297,7 @@
                             <li class="item">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <img src="assets/3.jpg" alt="10x10" class="rounded-circle size"
+                                        <img src="assets/3.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -638,7 +312,7 @@
                             <li class="item">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <img src="assets/4.jpg" alt="10x10" class="rounded-circle size"
+                                        <img src="assets/4.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -653,7 +327,7 @@
                             <li class="item">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <img src="assets/5.jpg" alt="10x10" class="rounded-circle size"
+                                        <img src="assets/5.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -668,7 +342,7 @@
                             <li class="item">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <img src="assets/1.jpg" alt="10x10" class="rounded-circle size"
+                                        <img src="assets/1.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -683,7 +357,7 @@
                             <li class="item">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <img src="assets/2.jpg" alt="10x10" class="rounded-circle size"
+                                        <img src="assets/2.jpg" alt="10x10" class="rounded-circle size bigger-mobile"
                                             data-holder-rendered="true" />
                                     </div>
                                     <div class="row justify-content-center mt-3">
@@ -706,7 +380,7 @@
                     </div>
                 </div>
                 <hr />
-                <div class="col-12">
+                <div class="col">
                     <div class="headline-related-video">
                         RELATED VIDEOS
                         <span class="float-right" id="watch-all-text">
@@ -839,24 +513,29 @@
     </div>
 
     <!-- Money Section -->
-    <div class="containerr money-section p-4 w-100">
-        <div class="row justify-content-center">
-            <div class="col-2">
+    <div class="containerr money-section p-4 ">
+        <div class="row mobile-list">
+            <div class="col-sm justify-content-center">
                 <i class="fas fa-money-bill-wave-alt fa-4x"></i>
             </div>
-            <div class="col-4">
-                <div class="row nominal-money">$10,000</div>
+            <div class="col-sm ">
                 <div class="row">
-                    <div class="title-money">WORTH OF POINTS REDEEMED AS OF TODAY</div>
+                    <div class="nominal-money text-center hide-mobile-money text-center">$10,000</div>
+                </div>
+                <div>
+
                 </div>
                 <div class="row">
-                    <div class="subtitle-money">
+                    <div class="title-money text-center">WORTH OF POINTS REDEEMED AS OF TODAY</div>
+                </div>
+                <div class="row">
+                    <div class="subtitle-money text-center">
                         BECOME A MEMBER AND EARN REWARDS TODAY!
                     </div>
                 </div>
             </div>
-            <div class="col-2 border1 justify-content-center align-items-center align-self-center">
-                <div>EARN NOW <i class="fas fa-arrow-right"></i></div>
+            <div class="col-sm border1 align-items-center align-self-center">
+                <div class="full-widht">EARN NOW <i class="fas fa-arrow-right"></i></div>
             </div>
         </div>
     </div>
@@ -866,31 +545,42 @@
         <div class="row">
             <div class="col-sm"></div>
 
-            <div class="col-10">
+            <div class="col-10 column-editor">
                 <div class="headline-stories">Editor's Spots</div>
-                <div class="pt-2">
-                    <div class="chip" id="chip1" onclick="changeColorChip1()">
-                        <div>All</div>
-                    </div>
-                    <div class="chip" id="chip2" onclick="changeColorChip2()">
-                        <div>DEALS</div>
-                    </div>
-                    <div class="chip" id="chip3" onclick="changeColorChip3()">
-                        <div>THINGS TO DO</div>
-                    </div>
-                    <div class="chip" id="chip4" onclick="changeColorChip4()">
-                        <div>FUN</div>
-                    </div>
-                    <div class="chip" id="chip5" onclick="changeColorChip5()">
-                        <div>LATEST NEWS</div>
+                <div>
+                    <div class="scrollmenu">
+                        <a href="#home">
+                            <div class="chip" id="chip1" onclick="changeColorChip1()">
+                                <div>All</div>
+                            </div>
+                        </a>
+                        <a href="#news">
+                            <div class="chip" id="chip2" onclick="changeColorChip2()">
+                                <div>DEALS</div>
+                            </div>
+                        </a>
+                        <a href="#contact">
+                            <div class="chip" id="chip3" onclick="changeColorChip3()">
+                                <div>THINGS TO DO</div>
+                            </div>
+                        </a>
+                        <a href="#about">
+                            <div class="chip" id="chip4" onclick="changeColorChip4()">
+                                <div>FUN</div>
+                            </div>
+                        </a>
+                        <a href="#about">
+                            <div class="chip" id="chip5" onclick="changeColorChip5()">
+                                <div>LATEST NEWS</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-
 
                 <!-- Image Headline -->
                 <div class="container-fluid mt-4">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-lg-6 col-12 hidden-headline-mobile">
                             <div class="container-headline">
                                 <div class="row">
                                     <img src="assets/3.jpg" alt="10x10" class="headline-editor" />
@@ -928,218 +618,198 @@
                         </div>
 
                         <!-- Grid Container -->
-                        <div class="col">
-                            <div class="grid-container">
-                                <div class="item1">
-                                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="container-fluid">
+                                <div class="row mt-3">
+                                    <div class="col-md-4 p-1">
                                         <img src="assets/1.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
                                                 LIFESTYLE
                                                 <span class="time-headline p-2">• 02:12AM </span>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
+
+
+                                            <p class="headline-title ">
                                                 Apple iWork 08 Review
                                             </p>
+
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item2">
-                                    <div class="row ">
+                                    <div class="col-md-4 p-1">
                                         <img src="assets/3.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
+                                        <div class="width-section-headline">
 
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
+                                            <div class="subtitle-headline pt-1">
                                                 LIFESTYLE
                                                 <span class="time-headline p-2">• 02:12AM </span>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
-                                                Apple iWork 08 Review
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item3">
-                                    <div class="row">
-                                        <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
 
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
-                                                LIFESTYLE
-                                                <span class="time-headline p-2">• 02:12AM </span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
-                                                Apple iWork 08 Review
-                                            </p>
-                                        </div>
-                                    </div>
 
-                                </div>
-                                <div class="item1">
-                                    <div class="row">
-                                        <img src="assets/4.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
-                                                LIFESTYLE
-                                                <span class="time-headline p-2">• 02:12AM </span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
+                                            <p class="headline-title ">
                                                 Apple iWork 08 Review
                                             </p>
+
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item2">
-                                    <div class="row">
-                                        <img src="assets/1.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
-                                                LIFESTYLE
-                                                <span class="time-headline p-2">• 02:12AM </span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
-                                                Apple iWork 08 Review
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item3">
-                                    <div class="row">
+                                    <div class="col-md-4 p-1">
                                         <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
                                                 LIFESTYLE
                                                 <span class="time-headline p-2">• 02:12AM </span>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
-                                                Apple iWork 08 Review all
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item1">
-                                    <div class="row">
-                                        <img src="assets/1.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
-                                                LIFESTYLE
-                                                <span class="time-headline p-2">• 02:12AM </span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
+
+
+                                            <p class="headline-title">
                                                 Apple iWork 08 Review
                                             </p>
+
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item2">
-                                    <div class="row">
-                                        <img src="assets/1.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
-                                                LIFESTYLE
-                                                <span class="time-headline p-2">• 02:12AM </span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
-                                                Apple iWork 08 Review
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item3">
-                                    <div class="row">
+                                <div class="row mt-3">
+                                    <div class="col-md-4 p-1">
                                         <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
-                                    </div>
-                                    <div class="width-section-headline">
-                                        <div class="row">
-                                            <div class="subtitle-headline mt-4">
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
                                                 LIFESTYLE
                                                 <span class="time-headline p-2">• 02:12AM </span>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="headline-title text-center">
-                                                Apple iWork 08 Review all
+
+
+                                            <p class="headline-title">
+                                                Apple iWork 08 Review
                                             </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 p-1">
+                                        <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
+                                                LIFESTYLE
+                                                <span class="time-headline p-2">• 02:12AM </span>
+                                            </div>
+
+
+                                            <p class="headline-title">
+                                                Apple iWork 08 Review
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 p-1">
+                                        <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
+                                                LIFESTYLE
+                                                <span class="time-headline p-2">• 02:12AM </span>
+                                            </div>
+
+
+                                            <p class="headline-title">
+                                                Apple iWork 08 Review
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-4 p-1">
+                                        <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
+                                                LIFESTYLE
+                                                <span class="time-headline p-2">• 02:12AM </span>
+                                            </div>
+
+
+                                            <p class="headline-title">
+                                                Apple iWork 08 Review
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 p-1">
+                                        <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
+                                                LIFESTYLE
+                                                <span class="time-headline p-2">• 02:12AM </span>
+                                            </div>
+
+
+                                            <p class="headline-title">
+                                                Apple iWork 08 Review
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 p-1">
+                                        <img src="assets/2.jpg" alt="10x10" class="headline-editor-image-grid" />
+                                        <div class="width-section-headline">
+
+                                            <div class="subtitle-headline pt-1">
+                                                LIFESTYLE
+                                                <span class="time-headline p-2">• 02:12AM </span>
+                                            </div>
+
+
+                                            <p class="headline-title">
+                                                Apple iWork 08 Review
+                                            </p>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row border3 justify-content-center w-75">SHOW MORE <i
-                                    class="fas fa-arrow-down"></i></div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
-
-        <!-- Get Award Section -->
-        <div class="container-get-award background-banner p-4 mt-3 w-100">
-            <div class="row justify-content-center">
-                <div class="col-3">
-                    <div class="row title-award">GET AWARDED AS YOU READ!</div>
-                </div>
-                <div class="col-4">
-                    <div class="row">
-                        <div class="paragraph-award">Sign up and join our community to earn Spotted!
+       
+        <!-- Get Award -->
+        <div class="container-get-award background-banner p-4 mt-4">
+            <div class="container just">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="title-award center-text">GET AWARDED AS YOU READ!</div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="paragraph-award center-text">Sign up and join our community to earn Spotted!
                             <br />Coins as you read! Coins earned can then be converted
                             <br />Into cash or userd to redeem figt cards or vouchers
                             <br />from established brands like Zalora, Grab and Shopee!
                         </div>
                     </div>
-
-                </div>
-                <div class="col-2 border1 justify-content-center align-items-center align-self-center">
-                    <div>SIGN UP <i class="fas fa-arrow-right"></i></div>
+                    <div class="col-sm border1 align-items-center align-self-center">
+                        <div class="full-widht">EARN NOW <i class="fas fa-arrow-right"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
-
 
 
 
 
         <!-- Grid Photo Instagram Layout -->
         <div class="container-image-instagram">
-            <div class="row">
-                <div class="col m-4">
+            
+                <div class="col m-4 w-100">
                     <div class="profile-instagram-text"><img src="assets/5.jpg" class="profile-instagram">
                         spottedmediasg</div>
                 </div>
-            </div>
+           
         </div>
 
         <div class="container-layout">
@@ -1147,27 +817,13 @@
                 <div class="gallery-item" tabindex="0">
                     <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
                         class="gallery-image" alt="">
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 56</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 2</li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="gallery-item" tabindex="0">
                     <img src="https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop"
                         class="gallery-image" alt="">
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 89</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 5</li>
-                        </ul>
-                    </div>
+                   
                 </div>
 
                 <div class="gallery-item" tabindex="0">
@@ -1176,14 +832,7 @@
                     <div class="gallery-item-type">
                         <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
                     </div>
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 42</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 1</li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="gallery-item" tabindex="0">
@@ -1192,14 +841,7 @@
                     <div class="gallery-item-type">
                         <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
                     </div>
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 38</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 0</li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="gallery-item" tabindex="0">
@@ -1209,27 +851,13 @@
                         <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
                     </div>
 
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 47</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 1</li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="gallery-item" tabindex="0">
                     <img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop"
                         class="gallery-image" alt="">
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 94</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 3</li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="gallery-item" tabindex="0">
@@ -1239,27 +867,13 @@
                         <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
                     </div>
 
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 52</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 4</li>
-                        </ul>
-                    </div>
+                   
                 </div>
 
                 <div class="gallery-item" tabindex="0">
                     <img src="https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop"
                         class="gallery-image" alt="">
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 66</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 2</li>
-                        </ul>
-                    </div>
+                   
                 </div>
 
                 <div class="gallery-item" tabindex="0">
@@ -1268,19 +882,12 @@
                     <div class="gallery-item-type">
                         <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
                     </div>
-                    <div class="gallery-item-info">
-                        <ul>
-                            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
-                                    class="fas fa-heart" aria-hidden="true"></i> 45</li>
-                            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
-                                    class="fas fa-comment" aria-hidden="true"></i> 0</li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
 
             <div id="loader_div"
-                class="row container-layout border4 justify-content-center w-100 ld-ext-right buttonLoader" onclick="">
+                class="row container-layout border4 justify-content-center w-100 ld-ext-right buttonLoader" >
                 SHOW MORE
                 <i class="fas fa-arrow-down"></i>
             </div>
@@ -1288,30 +895,27 @@
     </div>
 
 
-
-
-
     <!-- Get In Touch -->
-    <div class="container-get-award background-banner2 p-5 mt-3 w-100">
-        <div class="row justify-content-center">
-            <div class="col-3">
+    <div class="container-get-award background-banner2 p-5 mt-3 w-100 grid-to-list">
+        <div class="row justify-content-center mobile-list-get-in-touch">
+            <div class="col-sm">
                 <div class="row title-banner2">GET IN TOUCH</div>
                 <div class="row subtitle-banner">We'd love to hear from you!</div>
             </div>
-            <div class="col-4">
-                <div class="row">
+            <div class="col-sm">
+                
                     <input type="text" class="form-control input-form m-1" id="inputName" aria-describedby="name"
                         placeholder="Your Name">
-                </div>
-                <div class="row">
+                
+               
                     <input type="email" class="form-control input-form m-1" id="inputEmail" aria-describedby="email"
                         placeholder="Your email address">
-                </div>
-                <div class="row dropdown">
+                
+                <div class="dropdown">
                     <a class="dropdown-toggle text-light form-control input-form m-1 dropdown-message" href="#"
                         data-toggle="dropdown"> Your Message Objective
                     </a>
-                    <!-- <input type="email" class="form-control input-form m-1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email"> -->
+                    
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item text-dark" href="#"> Second level 1 </a>
@@ -1367,12 +971,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="row ">
-                    <input type="text" class="form-control input-form m-1 custom-text w-100 justify-content-center"
+            <div class="col-sm ml-1">
+               
+                    <input type="text" class="form-control  m-1 custom-text w-100 "
                         id="inputName" aria-describedby="name" placeholder="Your Name">
-                </div>
-                <div class=" border5 w-100 mr-auto">
+               
+                <div class="border5 w-100 ">
                     <div>SIGN UP TODAY<i class="fas fa-arrow-right"></i></div>
                 </div>
             </div>
@@ -1390,11 +994,11 @@
 
     <!-- Footer -->
     <footer class="py-5 background-footer">
-        <div class="row">
-            <div class="col-12 col-md">
+        <div class="row grid-to-list">
+            <div class="col-11 col-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="d-block mb-2">
+                    class="d-block mb-2 logo">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
                     <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
@@ -1403,7 +1007,7 @@
                     <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
                     <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
                 </svg>
-                <small class="d-block mb-3 text-light bold">&copy; ABOUT SPOTTED MEDIA</small>
+                <small class="d-block mb-3 text-light bold ">&copy; ABOUT SPOTTED MEDIA</small>
                 <small class="d-block mb-3 text-light text-justify">As the #1 digital platform for happenings in
                     Singapore, Spotted!
                     Media brings you the lates trends and spots, right to your
@@ -1436,7 +1040,7 @@
                         </div>
                     </div>
 
-                    <div class="mt-5">
+                    <div class="mt-5 sosial-media">
                         <a href="#" class="fa fa-facebook"></a>
                         <a href="#" class="fa fa-instagram"></a>
                         <a href="#" class="fab fa-tiktok"></a>

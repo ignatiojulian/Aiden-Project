@@ -4,6 +4,7 @@ function setTheme() {
     element.classList.toggle("dark-mode");
  }
  
+ 
 
 //  Function Slider Stories
 $(function slider() {
@@ -66,8 +67,15 @@ function changeColorChip1() {
  }
 
 
+// Show More Instagram
 
-//  Loader
-function loader() {
-    
-}
+
+
+$(function showMore() {
+    $('#loader_div').click(function () {
+        $('.gallery div:hidden').slice(0, 2).show();
+        if ($('.gallery div').length == $('.gallery div:visible').length) {
+            $('span ').hide();
+        }
+    });
+});
