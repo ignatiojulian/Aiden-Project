@@ -108,7 +108,7 @@ body {
 .search-container {
   --searchbox-height: 30px;
   margin: 0 auto 0 auto;
-  min-width: 410px;
+  min-width: 290px;
   width: var(--content-width);
 }
 
@@ -118,7 +118,7 @@ body {
   background: whitesmoke;
   cursor: text;
   margin: 0 auto;
-  max-width: 584px;
+  max-width: 450px;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-radius: 5px;
   box-sizing: border-box;
@@ -185,6 +185,10 @@ a#navbarDropdownMenuLink.nav-link.dropdown-toggle {
   color: blue;
 }
 
+#cash {
+  color: blue;
+}
+
 @media screen and (max-width: 769px) {
   .limit-mobile {
     max-width: 75%;
@@ -198,9 +202,9 @@ a#navbarDropdownMenuLink.nav-link.dropdown-toggle {
   .show-when-mobile {
     visibility: visible;
   }
-  
-
-  
+  #cash {
+    color: blue;
+  }
 }
 
 /* ==================================================================== NAVBAR TOP */
@@ -241,9 +245,75 @@ a#navbarDropdownMenuLink.nav-link.dropdown-toggle {
 .switch {
   position: relative;
   display: inline-block;
-  width: 45px;
+  width: 50px;
   height: 20px;
-  margin-top: 10px;
+  margin-top: 7px;
+}
+
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+   border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: orange;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after
+{
+ content:'🌙';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-0%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+ margin-left: 5px;
+}
+
+input:checked + .slider:after
+{  
+  content:'🌝';
+  transform: translate(-200%,-50%);
+  top: 50%;
+  left: 50%;
 }
 
 /* Hide default HTML checkbox */
@@ -293,14 +363,8 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
 
-.slider.round:before {
-  border-radius: 50%;
-}
+
 
 /* ============================================================================ Navbar 2nd */
 
@@ -502,6 +566,14 @@ div .sub-title {
   width: 40px;
   height: 30px;
   top: 15%;
+}
+
+.opacity-play {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  opacity: 0.5;
+  background-color: black;
 }
 
 @media screen and (max-width: 769px) {
@@ -819,7 +891,7 @@ div.scrollmenu a:hover {
 .container-layout {
   width: 50rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 auto;
 }
 
 .visually-hidden {
@@ -924,8 +996,8 @@ div.scrollmenu a:hover {
 
 @media screen and (max-width: 769px) {
   .profile-instagram-text {
-    font-size: 12px;
-    width: 100%;
+    font-size: 10px;
+    
   }
 }
 
@@ -977,7 +1049,7 @@ div.scrollmenu a:hover {
   border: 1px solid white;
   border-radius: 5px;
   height: 40px;
-  width: 300px;
+  width: auto;
 }
 
 .input-form::placeholder {
@@ -991,7 +1063,7 @@ div.scrollmenu a:hover {
 
 .custom-text {
   height: 70px;
-  width: 100%;
+  background-color: blue;
 }
 
 .border5 {
@@ -1000,11 +1072,11 @@ div.scrollmenu a:hover {
   border-bottom: double;
   border-right: double;
   padding: 10px;
-  /* width: 70px; */
+  
   height: 50px;
   text-align: center;
-  margin-top: 5px;
-  margin-left: 5px;
+
+  /* margin-left: 5px; */
 }
 
 
@@ -1026,8 +1098,17 @@ div.scrollmenu a:hover {
   .mobile-list-get-in-touch {
     display: list-item;
     justify-content: center;
+    list-style-type: none;
   }
+  .title-banner2 {
+    text-align: center;
+  }
+
+
+ 
+
 }
+
 
 
 
@@ -1079,13 +1160,13 @@ div.scrollmenu a:hover {
   border-radius: 50%;
 }
 
-.fa:hover {
+.sosmed-icon:hover {
   opacity: 0.7;
   background-color: yellowgreen;
   color: navy;
 }
 
-.fab:hover {
+.sosmed-icon:hover {
   opacity: 0.7;
   background-color: yellowgreen;
   color: navy;
@@ -1105,14 +1186,17 @@ div.scrollmenu a:hover {
   background: #000034;
   color: grey;
 }
-/* 
+
 
   @media screen and (max-width: 769px) {
+    footer {
+      height: 600px;
+    }
+   
     .grid-to-list {
       display: list-item;
       position: relative;
       margin: auto;
-     
     }
 
     .logo {
@@ -1120,8 +1204,29 @@ div.scrollmenu a:hover {
       margin: auto;
       position: relative;
     }
+    .sosial-media {
+      text-align: center;
+    }
+
+    .relative-display-mobile {
+      position: absolute;
+      top: 300px;
+      display: flex;
+    }
+
+    .absolute-position-mobile {
+      position: absolute;
+      bottom: -250px;
+      display: flex;
+    }
+
+    .margin-top-mobile-otherS {
+      margin-top: 100px;
+    }
+
+  
   
 
   }
   
- */
+
